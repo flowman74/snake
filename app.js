@@ -111,11 +111,11 @@ const hasGameEnded = () => {
   const hitRightWall = snake.coords[0].x > board.width - 10
   const hitTopWall = snake.coords[0].y < 0
   const hitBottomWall = snake.coords[0].y > board.height - 10
-  // return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall
-  if (hitLeftWall) return 1
-  if (hitRightWall) return 2
-  if (hitTopWall) return 3
-  if (hitBottomWall) return 4
+  return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall
+  // if (hitLeftWall) return 1
+  // if (hitRightWall) return 2
+  // if (hitTopWall) return 3
+  // if (hitBottomWall) return 4
   return false
 }
 
@@ -177,24 +177,24 @@ const gameOver = () => {
 
 const main = () => {
   switch (hasGameEnded()) {
-    case 1:
-      snake.coords[0].x += board.width + 10
-      moveSnake()
-      break
-    case 2:
-      snake.coords[0].x -= board.width + 10
-      moveSnake()
-      break
-    case 3:
-      snake.coords[0].y += board.width + 10
-      moveSnake()
-      break
-    case 4:
-      snake.coords[0].y -= board.width + 10
-      moveSnake()
-      break
-    // case true:
-    //   return gameOver()
+    // case 1:
+    //   snake.coords[0].x += board.width + 10
+    //   moveSnake()
+    //   break
+    // case 2:
+    //   snake.coords[0].x -= board.width + 10
+    //   moveSnake()
+    //   break
+    // case 3:
+    //   snake.coords[0].y += board.width + 10
+    //   moveSnake()
+    //   break
+    // case 4:
+    //   snake.coords[0].y -= board.width + 10
+    //   moveSnake()
+    //   break
+    case true:
+      return gameOver()
     case false:
       break
   }
